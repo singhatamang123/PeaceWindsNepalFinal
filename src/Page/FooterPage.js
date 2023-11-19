@@ -1,30 +1,58 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa'; // Import icons from react-icons
-import ceoPic from './ceo.jpg'; // Replace with your CEO's picture
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { Row, Col } from 'react-bootstrap';
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: '#333', color: 'white', padding: '50px 20px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-        <img src={ceoPic} alt="CEO" style={{ width: '100px', height: '100px', borderRadius: '50%', marginRight: '20px' }} />
-        <div style={{ textAlign: 'left' }}>
-        <h3>Palden Tamang</h3>
-          <p style={{ fontSize: '1.2em', color: 'brown', margin: '10px 0', fontWeight: 'bold' }}>"Comments about the CEO can go here".</p>
-        </div>
-      </div>
-      <h3 style={{ marginBottom: '20px' }}>Follow us on social media</h3>
+    <footer className="site-footer" style={{ backgroundColor: '#333', color: 'white', padding: '50px 20px', textAlign: 'center' }}>
+      <h3 style={{ marginBottom: '20px', display: 'flex', justifyContent: 'center', fontSize: '24px', fontWeight: 'bold' }}>
+        <span style={{ color: 'red' }}>Peace</span>
+        <span style={{ color: 'white' }}>Winds</span>
+        <span style={{ color: 'blue' }}>Nepal</span>
+      </h3>
+      <Row>
+        <Col md={6}>
+          <address style={{ marginBottom: '20px', fontSize: '16px' }}>
+            <p>
+              <FaMapMarkerAlt /> Kathmandu, Nepal <br />
+            </p>
+            <p>
+              <FaPhone /> 9856088770
+            </p>
+            <p>
+              <FaEnvelope />peacewindsnpl@gmail.com
+            </p>
+          </address>
+        </Col>
 
-      <div>
-        <a href="https://www.facebook.com">
-          <FaFacebook style={{ color: 'white', fontSize: '24px', margin: '0 10px' }} />
-        </a>
-        <a href="https://www.twitter.com">
-          <FaTwitter style={{ color: 'white', fontSize: '24px', margin: '0 10px' }} />
-        </a>
-        <a href="https://www.instagram.com">
-          <FaInstagram style={{ color: 'white', fontSize: '24px', margin: '0 10px' }} />
-        </a>
-      </div>
+        <Col md={6}>
+          <nav style={{ marginBottom: '20px', fontSize: '18px' }}>
+            <Link to="/" style={{ marginRight: '20px', color: 'white', textDecoration: 'none' }}>
+              Home
+            </Link>
+            <Link to="/about" style={{ marginRight: '20px', color: 'white', textDecoration: 'none' }}>
+              About
+            </Link>
+            <Link to="/contact" style={{ marginRight: '20px', color: 'white', textDecoration: 'none' }}>
+              Contact
+            </Link>
+            <Link to="/donate" style={{ color: 'white', textDecoration: 'none' }}>
+              Donation
+            </Link>
+          </nav>
+
+          <div>
+            <a href="https://www.facebook.com" rel="noopener noreferrer" target="_blank">
+              <FaFacebook style={{ color: 'white', fontSize: '32px', margin: '0 15px' }} alt="Facebook" />
+            </a>
+            <a href="https://www.instagram.com" rel="noopener noreferrer" target="_blank">
+              <FaInstagram style={{ color: 'white', fontSize: '32px', margin: '0 15px' }} alt="Instagram" />
+            </a>
+          </div>
+        </Col>
+      </Row>
     </footer>
   );
 };

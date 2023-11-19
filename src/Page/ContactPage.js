@@ -21,17 +21,17 @@ const Contact = () => {
             <p>Contact us with the following details and fill up the form with the details.</p>
             <div className="d-flex align-items-center">
   <FaMapMarker className="icon mr-2" />
-  <p style={{ margin: '0', marginLeft: '5px', color: 'blue' }}>NPM, NY, USA</p>
+  <p style={{ margin: '0', marginLeft: '5px', color: 'blue' }}>Kathmandu, Nepal</p>
 </div>
 <br />
 <div className="d-flex align-items-center">
   <FaEnvelope className="icon mr-2" />
-  <p style={{ margin: '0', marginLeft: '5px', color: 'blue' }}>contact@bbbootstrap.com</p>
+  <p style={{ margin: '0', marginLeft: '5px', color: 'blue' }}>peacewindsnpl@gmail.com</p>
 </div>
 <br />
 <div className="d-flex align-items-center">
   <FaMobile className="icon mr-2" />
-  <p style={{ margin: '0', marginLeft: '5px', color: 'blue' }}>+1 989 989 9898</p>
+  <p style={{ margin: '0', marginLeft: '5px', color: 'blue' }}>9856088770</p>
 </div>
 <div className="d-flex align-items-center mt-4 justify-content-center">
   <FaFacebook className="icon mx-2" size={50} style={{ color: 'red' }} />
