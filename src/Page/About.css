@@ -60,4 +60,26 @@
   }
   
   /* Add more styles as needed */
+
+  /* styles.css */
+
+/* styles.css */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 4s ease-in-out infinite;
+}
+
+
   

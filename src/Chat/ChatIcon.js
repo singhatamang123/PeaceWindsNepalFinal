@@ -9,7 +9,9 @@ const ChatIcon = ({ onClick, isOpen }) => {
       {isOpen ? (
         <CloseButton />
       ) : (
-        <BsChat />
+        <div>
+          <BsChat />
+        </div>
       )}
     </div>
   );

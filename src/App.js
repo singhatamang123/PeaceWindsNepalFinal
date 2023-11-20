@@ -1,5 +1,5 @@
 // App.js
-// import "./App.css"
+import "./App.css"
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import CustomNavbar from './Page/CustomNavbar';

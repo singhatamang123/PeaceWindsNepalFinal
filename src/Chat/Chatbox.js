@@ -3,11 +3,24 @@ import React, { useState, useEffect } from 'react';
 import './Chatbox.css';
 import ChatIcon from './ChatIcon'; // Adjust the path based on your file structure
 
+const chatboxStyle = {
+  position: 'fixed',
+  bottom: 0,
+  right: 20,
+  zIndex: 1000,
+  // Add other styling as needed
+};
+
 const Chatbox = () => {
+  const [isChatboxOpen, setIsChatboxOpen] = useState(false);
+
+  const toggleChatbox = () => {
+    setIsChatboxOpen(!isChatboxOpen);
+  };
+
   // State variables
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
-  const [isChatboxOpen, setIsChatboxOpen] = useState(false);
 
   // Function to generate bot responses
   const generateBotResponse = (text) => {
@@ -63,9 +76,9 @@ const Chatbox = () => {
   };
 
   return (
-    <>
+    <div style={chatboxStyle}>
       {/* ChatIcon component to toggle the chatbox */}
-      <ChatIcon onClick={() => setIsChatboxOpen(!isChatboxOpen)} isOpen={isChatboxOpen} />
+      <ChatIcon onClick={toggleChatbox} isOpen={isChatboxOpen} />
 
       {/* Chatbox UI */}
       {isChatboxOpen && (
@@ -98,7 +111,7 @@ const Chatbox = () => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
