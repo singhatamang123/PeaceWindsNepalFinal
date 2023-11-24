@@ -12,7 +12,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
       const response = await fetch('http://localhost:5000/send-email', {
         method: 'POST',
@@ -21,9 +21,9 @@ const Contact = () => {
         },
         body: JSON.stringify(formData),
       });
-  
+
       if (response.ok) {
-        alert('Email sent successfully!');
+        alert('Thank you for your message! We will get back to you soon.');
         // Clear the form fields after successful submission
         setFormData({
           name: '',
@@ -32,28 +32,25 @@ const Contact = () => {
           message: '',
         });
       } else {
-        alert('Error sending email');
+        alert('Error sending message. Please try again.');
       }
     } catch (error) {
-      console.error('Error sending email:', error);
-      alert('Error sending email');
+      console.error('Error sending message:', error);
+      alert('Error sending message. Please try again.');
     }
   };
-  
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
-    <div id="contact">
-      <h2 style={{ fontSize: '2.5em', color: 'navy', textAlign: 'center', marginBottom: '0.5em', fontFamily: 'Courier, monospace', fontWeight: 'bold' }}>Contact</h2>
-
-      <Container fluid className="bg-white text-dark p-4">
+    <div id="contact" style={{ backgroundColor: '#f8f9fa', padding: '40px 0' }}>
+      <Container>
         <Row>
           <Col xs={12} md={6} className="mb-4">
             <div>
-              <h3>Let's get in touch</h3>
+              <h3 style={{ color: 'navy' }}>Let's get in touch</h3>
               <p>Contact us with the following details and fill up the form with the details.</p>
               <div className="d-flex align-items-center">
                 <FaMapMarker className="icon mr-2" />
@@ -70,23 +67,20 @@ const Contact = () => {
                 <p style={{ margin: '0', marginLeft: '5px', color: 'blue' }}>9856088770</p>
               </div>
               <div className="d-flex align-items-center mt-4 justify-content-center">
-                <FaFacebook className="icon mx-2" size={50} style={{ color: 'red' }} />
-                <FaTwitter className="icon mx-2" size={50} style={{ color: 'red' }} />
-                <FaInstagram className="icon mx-2" size={50} style={{ color: 'red' }} />
+                <FaFacebook className="icon mx-2" size={30} style={{ color: 'navy' }} />
+                <FaTwitter className="icon mx-2" size={30} style={{ color: 'navy' }} />
+                <FaInstagram className="icon mx-2" size={30} style={{ color: 'navy' }} />
               </div>
             </div>
           </Col>
           <Col xs={12} md={6}>
-            <div className="mb-4">
-              <hr style={{ border: '1px solid white' }} />
-            </div>
             <Form name="contactForm" id="contactForm" onSubmit={handleSubmit}>
-              <h3>Contact us</h3>
+              <h3 style={{ color: 'navy', marginBottom: '20px' }}>Contact us</h3>
               <Form.Group className="mb-3">
                 <Form.Control
                   type="text"
                   name="name"
-                  placeholder="Name"
+                  placeholder="Your Name"
                   className="form-control"
                   value={formData.name}
                   onChange={handleChange}
@@ -97,7 +91,7 @@ const Contact = () => {
                 <Form.Control
                   type="email"
                   name="email"
-                  placeholder="Email"
+                  placeholder="Your Email"
                   className="form-control"
                   value={formData.email}
                   onChange={handleChange}
@@ -108,7 +102,7 @@ const Contact = () => {
                 <Form.Control
                   type="tel"
                   name="phone"
-                  placeholder="Phone"
+                  placeholder="Your Phone"
                   className="form-control"
                   value={formData.phone}
                   onChange={handleChange}
@@ -119,7 +113,7 @@ const Contact = () => {
                 <Form.Control
                   as="textarea"
                   name="message"
-                  placeholder="Message"
+                  placeholder="Your Message"
                   className="form-control"
                   style={{ height: '120px' }}
                   value={formData.message}
@@ -128,7 +122,7 @@ const Contact = () => {
                 />
               </Form.Group>
               <Button variant="primary" type="submit" className="btn-lg w-100">
-                Send
+                Send Message
               </Button>
             </Form>
           </Col>

@@ -33,7 +33,7 @@ const PeopleCarousel = () => {
                   src={person.image}
                   alt={person.name}
                   className="img-fluid rounded-circle mb-4"
-                  style={{ width: '150px', height: '150px', objectFit: 'cover' }}
+                  style={{ width: '150px', height: '150px', objectFit: 'cover', borderRadius: '50%' }}
                 />
                 <h3 className="text-dark">{person.name}</h3>
                 <p className="text-muted">{person.position}</p>

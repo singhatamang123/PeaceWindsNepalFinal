@@ -1,21 +1,25 @@
 /* Chatbox.css */
+/* Chatbox.css */
 .chat-icon {
-    position: fixed;
-    bottom: 100px; /* Adjust the distance from the bottom */
-    right: 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease-in-out;
-  }
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px; /* Adjusted border-radius for a slightly rounded rectangle */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* ... Other styles remain unchanged ... */
+
   /* Styles for smaller screens (e.g., mobile devices) */
 @media (max-width: 767px) {
     .chatbox {

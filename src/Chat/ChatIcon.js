@@ -1,7 +1,7 @@
 // ChatIcon.js
 import React from 'react';
 import { CloseButton } from 'react-bootstrap';
-import { BsChat } from 'react-icons/bs';
+import { BsChatSquare } from 'react-icons/bs'; // Changed to BsChatSquare for a message box icon
 
 const ChatIcon = ({ onClick, isOpen }) => {
   return (
@@ -10,7 +10,7 @@ const ChatIcon = ({ onClick, isOpen }) => {
         <CloseButton />
       ) : (
         <div>
-          <BsChat />
+          <BsChatSquare /> {/* Changed to BsChatSquare */}
         </div>
       )}
     </div>

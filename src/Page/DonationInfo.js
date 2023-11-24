@@ -21,7 +21,7 @@ const DonateInfo = () => {
 
   // Define the tooltip for the mobile icon
   const mobileTooltip = (
-    <Tooltip id="mobile-tooltip">Click to view QR code for mobile donation</Tooltip>
+    <Tooltip id="mobile-tooltip">QR code</Tooltip>
   );
 
   return (

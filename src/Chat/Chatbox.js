@@ -1,5 +1,6 @@
 // Import the necessary libraries and components
 import React, { useState, useEffect } from 'react';
+import DOMPurify from 'dompurify';
 import './Chatbox.css';
 import ChatIcon from './ChatIcon'; // Adjust the path based on your file structure
 
@@ -93,8 +94,8 @@ const Chatbox = () => {
             {/* Displaying messages in the chatbox */}
             {messages.map((message, index) => (
               <div key={index} className={`message ${message.sender === 'user' ? 'user-message' : 'bot-message'}`}>
-                {/* Use dangerouslySetInnerHTML to render HTML in React */}
-                <div dangerouslySetInnerHTML={{ __html: message.text }} />
+                {/* Sanitize and render HTML content */}
+                <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(message.text) }} />
               </div>
             ))}
           </div>

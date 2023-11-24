@@ -30,7 +30,7 @@ const CustomNavbar = () => {
   };
 
   const navLinkStyle = (isActive) => ({
-    color: isActive ? 'blue' : '#333',
+    color: isActive ? '#007bff' : '#333', // Adjusted color for active link
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -41,11 +41,11 @@ const CustomNavbar = () => {
   return (
     <>
       <Navbar
-        bg={isSticky ? 'blue' : 'transparent'}
-        variant="blue"
+        bg={isSticky ? '#fff' : 'transparent'} // Updated background color
+        variant="light"
         expand="lg"
         className={`navbar ${isSticky ? 'sticky' : ''}`}
-        style={{ transition: 'all 0.4s', marginBottom: '-40px' }}
+        style={{ transition: 'all 0.4s', marginBottom: '-40px', borderBottom: '1px solid #ddd' }}
       >
         <Container>
           <Navbar.Brand as={Link} to="/" style={{ borderRadius: '50%', overflow: 'hidden' }}>
