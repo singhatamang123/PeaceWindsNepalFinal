@@ -44,24 +44,6 @@ const CauseCard = ({ icon, title, description }) => (
 );
 
 const About = () => {
-  const causes = [
-    {
-      icon: <AiOutlineHeart size={60} color="royalblue" />,
-      title: "Facilities",
-      description: "Description for Facilities.",
-    },
-    {
-      icon: <AiOutlineFund size={60} color="green" />,
-      title: "Fund",
-      description: "Description for Fund.",
-    },
-    {
-      icon: <AiOutlineAim size={60} color="goldenrod" />,
-      title: "Education",
-      description: "Description for Education.",
-    },
-  ];
-
   const [showModal, setShowModal] = useState(false);
   const [modalImage, setModalImage] = useState("");
   const [modalAlt, setModalAlt] = useState("");
@@ -83,20 +65,18 @@ const About = () => {
       <Container className="about-container">
         <h2 className="section-title">Our Work</h2>
         <Row>
-          <Col md={6}>
+          <Col md={6} className="mb-4">
             <img src={flood} alt="NGO Work" className="img-fluid work-image" />
           </Col>
-          <Col md={6}>
+          <Col md={6} className="mb-4">
             <img src={e} alt="NGO Work" className="img-fluid work-image" />
           </Col>
-        </Row>
-        <Row>
           <Col md={6}>
             <p className="work-description">
               “Each day holds a surprise. But only if we expect it can we see,
               hear, or feel it when it comes to us. Let's not be afraid to
               receive each day's surprise, whether it comes to us as sorrow or
-              as joy It will open a new place in our hearts, a place where we
+              as joy. It will open a new place in our hearts, a place where we
               can welcome new friends and celebrate more fully our shared
               humanity.”
             </p>
@@ -124,9 +104,21 @@ const About = () => {
 
         <h2 className="section-title">Our Services</h2>
         <Row xs={1} md={3} className="g-4">
-          {causes.map((cause, index) => (
-            <CauseCard key={index} {...cause} />
-          ))}
+          <CauseCard
+            icon={<AiOutlineHeart size={60} color="royalblue" />}
+            title="Facilities"
+            description="Description for Facilities."
+          />
+          <CauseCard
+            icon={<AiOutlineFund size={60} color="green" />}
+            title="Fund"
+            description="Description for Fund."
+          />
+          <CauseCard
+            icon={<AiOutlineAim size={60} color="goldenrod" />}
+            title="Education"
+            description="Description for Education."
+          />
         </Row>
       </Container>
 

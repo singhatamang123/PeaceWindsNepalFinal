@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import help from "./help.jpg";
 import { Carousel, Row, Col } from "react-bootstrap";
+import help from "./help.jpg";
 import secondImage from "./second.jpg";
 import Chatbox from "../Chat/Chatbox.js";
 import PeopleCarousel from "./PeopleCarousel.js";
@@ -10,7 +10,8 @@ import ra from "./Photo/ra.jpg";
 import rk from "./Photo/rk.jpg";
 
 const carouselImageStyle = {
-  height: "550px", // Adjust the height of carousel images
+  height: "583px",
+  objectFit: "cover", // This will ensure your images are always centered and cover the carousel
 };
 
 const donateButtonStyle = {
@@ -28,20 +29,20 @@ const donateButtonStyle = {
 };
 
 const imageStyle = {
-  width: "100%", // Updated to fill the column width
+  width: "100%",
   borderRadius: "5%",
-  height: "auto", // Responsive height
+  height: "auto",
 };
 
 const textContainerStyle = {
   maxWidth: "600px",
   color: "black",
-  marginTop: "20px", // Added top margin for better spacing
+  marginTop: "20px",
 };
 
 const whoWeAreSectionStyle = {
   background: "rgba(253, 228, 228, 0.9)",
-  padding: "20px", // Adjusted padding
+  padding: "20px",
   borderRadius: "15px",
   textAlign: "left",
   marginBottom: "50px",
@@ -60,58 +61,55 @@ const pStyle = {
   marginTop: "10px",
 };
 
+const carouselItems = [
+  {
+    image: ra,
+    title: "Beautiful Scenery",
+    text: "Enjoy the breathtaking view of nature.",
+  },
+  {
+    image: rs,
+    title: "Adventure Awaits",
+    text: "Embark on a journey to new horizons.",
+  },
+  {
+    image: rk,
+    title: "Discover the Unknown",
+    text: "Explore the wonders of the world.",
+  },
+  {
+    image: secondImage,
+    title: "Discover the Unknown",
+    text: "Explore the wonders of the world.",
+  },
+];
+
 const HomePage = () => {
   return (
     <div>
-      <Carousel interval={4000} pause={false}>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={ra}
-            alt="NewImage"
-            style={carouselImageStyle}
-          />
-          <Carousel.Caption>
-            <h5>Beautiful Scenery</h5>
-            <p>Enjoy the breathtaking view of nature.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={rs}
-            alt="Second slide"
-            style={carouselImageStyle}
-          />
-          <Carousel.Caption>
-            <h5>Adventure Awaits</h5>
-            <p>Embark on a journey to new horizons.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={rk}
-            alt="Third slide"
-            style={carouselImageStyle}
-          />
-          <Carousel.Caption>
-            <h5>Discover the Unknown</h5>
-            <p>Explore the wonders of the world.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={secondImage}
-            alt="Third slide"
-            style={carouselImageStyle}
-          />
-          <Carousel.Caption>
-            <h5>Discover the Unknown</h5>
-            <p>Explore the wonders of the world.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
+      <Carousel interval={4000} pause={false} indicators={false} >
+        {carouselItems.map((item, index) => (
+          <Carousel.Item key={index}>
+            <img
+              className="d-block w-100"
+              src={item.image}
+              alt={item.title}
+              style={carouselImageStyle}
+            />
+            <Carousel.Caption>
+              <h5
+                style={{
+                  fontSize: "24px",
+                  fontWeight: "bold",
+                  marginBottom: "10px",
+                }}
+              >
+                {item.title}
+              </h5>
+              <p style={{ fontSize: "18px" }}>{item.text}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
       </Carousel>
 
       <section style={whoWeAreSectionStyle}>
@@ -124,14 +122,14 @@ const HomePage = () => {
               <h2 style={h2Style}>Who We Are?</h2>
               <p style={pStyle}>
                 Peace Winds Nepal is an organization that focuses on empowering
-                Nepal's children, youth , mens and womens.Peace Winds Nepal
-                shall remain an efficient, self-sustainable, and independent
-                humanitarian organization committed to provide immediate relief
-                to human suffering and reduce vulnerability, under the
-                Fundamental Principles of the peace winds Nepal, through its
-                network of workers throughout the country working closely with
+                Nepal's children, youth, men, and women. Peace Winds Nepal shall
+                remain an efficient, self-sustainable, and independent
+                humanitarian organization committed to providing immediate
+                relief to human suffering and reducing vulnerability under the
+                Fundamental Principles of Peace Winds Nepal. Through its network
+                of workers throughout the country working closely with
                 communities and governmental and non-governmental organizations
-                in a democratic, transparent and participatory way.
+                in a democratic, transparent, and participatory way.
               </p>
               <Link to="/donate" style={donateButtonStyle}>
                 Donate Now

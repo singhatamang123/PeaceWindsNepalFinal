@@ -1,9 +1,10 @@
 // PeopleCarousel.jsx
 
 import React from "react";
-import { Carousel, Container, Row, Col } from "react-bootstrap";
+import { Carousel, Container, Row, Col, Card } from "react-bootstrap";
 import ow1 from "./Photo/ow1.jpg";
 import ow2 from "./Photo/ow2.jpg";
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa"; // Import quote icons from react-icons
 
 const peopleData = [
   {
@@ -17,7 +18,7 @@ const peopleData = [
     name: "Chandra Kumar Ghising",
     position: "Board Of DirectorD",
     comment:
-      "“Be certain that you do not die without having done something wonderful for humanity.”",
+      "Be certain that you do not die without having done something wonderful for humanity.",
     image: ow2,
   },
   // Add more people as needed
@@ -25,7 +26,7 @@ const peopleData = [
 
 const PeopleCarousel = () => {
   return (
-    <Carousel>
+    <Carousel indicators={false}>
       {peopleData.map((person, index) => (
         <Carousel.Item
           key={index}
@@ -45,9 +46,34 @@ const PeopleCarousel = () => {
                     borderRadius: "50%",
                   }}
                 />
-                <h3 className="text-dark">{person.name}</h3>
-                <p className="text-muted">{person.position}</p>
-                <p className="lead text-muted">{person.comment}</p>
+                <h3
+                  className="text-dark"
+                  style={{ fontSize: "2em", fontWeight: "bold" }}
+                >
+                  {person.name}
+                </h3>{" "}
+                {/* Increased font size and made it bold */}
+                <p className="text-muted" style={{ fontSize: "1.2em" }}>
+                  {person.position}
+                </p>{" "}
+                {/* Increased font size */}
+              </Col>
+              <Col md={8}>
+                <Card.Body>
+                  <Card.Text>
+                    <FaQuoteLeft style={{ color: "#007bff" }} />{" "}
+                    {/* Colored quote icon */}
+                    <p
+                      className="lead text-muted"
+                      style={{ fontStyle: "italic", fontWeight: "bold" }} // Added bold
+                    >
+                      {person.comment}
+                    </p>{" "}
+                    {/* Italicized comment */}
+                    <FaQuoteRight style={{ color: "#007bff" }} />{" "}
+                    {/* Colored quote icon */}
+                  </Card.Text>
+                </Card.Body>
               </Col>
             </Row>
           </Container>
